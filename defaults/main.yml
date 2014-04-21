@@ -1,0 +1,5 @@
+---
+erlang_rebar_git: https://github.com/rebar/rebar.git
+erlang_rebar_src_path: ~/src/rebar
+erlang_rebar_version: 2.2.0
+erlang_rebar_bin_path: ~/bin/rebar

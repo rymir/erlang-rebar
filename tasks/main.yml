@@ -1,0 +1,12 @@
+---
+- name: clone erlang rebar
+  git: "repo={{ erlang_rebar_git }} dest={{ erlang_rebar_src_path }} version={{ erlang_rebar_version }}"
+
+- name: bootstrap erlang rebar
+  command: "chdir={{ erlang_rebar_src_path }} ./bootstrap creates={{ erlang_rebar_src_path }}/rebar"
+
+- name: copy erlang rebar executable
+  command: "cp {{ erlang_rebar_src_path }}/rebar {{ erlang_rebar_bin_path }} creates={{ erlang_rebar_bin_path }}"
+
+- name: ensure rebar mode
+  file: "path={{ erlang_rebar_bin_path }} mode=0755"
